@@ -6,7 +6,7 @@
 its a project about when you tap the question view you can see the answer or you can choose the good answer.
 
 ### App walk-though
-<img src="">
+<img src="https://github.com/JohnGassen/FlashCardJohn/blob/main/flashCardJohn_edit_0.gif" width="250">
 
 ## Required
 - [x] Create New Project in Android Studio
