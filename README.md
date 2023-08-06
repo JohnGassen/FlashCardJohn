@@ -3,7 +3,7 @@
 ## Lab 1
 
 ## Description
-its a project about when you tap the question view you can see the answer or you can choose the good answer.
+its a project about when you tap the question view you can see the answer.
 
 ### App walk-though
 <img src="C:\Users\abc\AndroidStudioProjects\FlashCard\gif">
