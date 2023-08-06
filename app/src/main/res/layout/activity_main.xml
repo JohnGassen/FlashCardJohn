@@ -34,30 +34,7 @@
         android:textSize="30sp" />
 
 
-     <Button
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/boutonRep1"
-         android:text="Bill CLington"
-         android:layout_marginTop="400dp"
-         android:textSize="19sp"
-         />
-     <Button
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/boutonRep2"
-         android:text="Obama"
-         android:layout_marginTop="450dp"
-         android:textSize="19sp"
-         />
-     <Button
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/boutonRep3"
-         android:text="Harvey Specter"
-         android:layout_marginTop="500dp"
-         android:textSize="19sp"
-         />
+
 
 
 </RelativeLayout>
