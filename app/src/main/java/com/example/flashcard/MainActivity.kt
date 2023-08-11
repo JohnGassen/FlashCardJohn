@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,32 +17,33 @@ class MainActivity : AppCompatActivity() {
 
         val textView = findViewById<TextView>(R.id.flashCard_question)
         val textAnswer = findViewById<TextView>(R.id.answer)
-        val rep1 = findViewById<Button>(R.id.boutonRep1)
-        val rep2 = findViewById<Button>(R.id.boutonRep2)
-        val rep3 = findViewById<Button>(R.id.boutonRep3)
+        val ajout = findViewById<ImageView>(R.id.addView)
 
         textView.setOnClickListener() {
             if (textAnswer.visibility == View.GONE) {
-                textAnswer.visibility == View.VISIBLE
-                textView.visibility == View.GONE
+                textAnswer.visibility = View.VISIBLE
+                textView.visibility = View.GONE
             }
         }
         textAnswer.setOnClickListener() {
-            textAnswer.visibility == View.GONE
-            textView.visibility ==View.VISIBLE
+            textAnswer.visibility = View.GONE
+            textView.visibility = View.VISIBLE
         }
 
-        rep1.setOnClickListener() {
-            val newColor = Color.parseColor("#FF0000")
-            rep1.setBackgroundColor(newColor)
+        ajout.setOnClickListener(){
+            val changeToAdd = Intent(this,AddCardActivity::class.java)
+            startActivity(changeToAdd)
         }
-        rep2.setOnClickListener(){
-            val newColor = Color.parseColor("#008000")
-            rep2.setBackgroundColor(newColor)
+
+        val receivedData = intent.getStringExtra("data")
+        val receivedData2 = intent.getStringExtra(("data2"))
+        if(receivedData != null && receivedData2 != null){
+            textView.text = receivedData
+            Toast.makeText(this,receivedData, Toast.LENGTH_SHORT).show()
+            textAnswer.text = receivedData2
+                Toast.makeText(this,receivedData2, Toast.LENGTH_SHORT).show()
         }
-        rep3.setOnClickListener(){}
-        val newColor = Color.parseColor("#FF0000")
-        rep3.setBackgroundColor(newColor)
+
 
     }
 }

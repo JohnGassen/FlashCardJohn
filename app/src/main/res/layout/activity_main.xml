@@ -9,32 +9,72 @@
     >
 
     <TextView
-        android:id="@+id/flashCard_question"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="FlashCard App"
+        android:textAlignment="textStart"
+        android:textColor="#2f2f2f"
+        android:textStyle="bold"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/flashCard_question"
+        android:layout_width="match_parent"
+        android:layout_height="272dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="162dp"
         android:background="@drawable/backgroundgray"
         android:text="Who is the 44th president of the united states?"
         android:textAlignment="center"
+        android:paddingTop="10dp"
         android:textColor="#fff"
         android:textSize="40sp" />
 
     <TextView
         android:id="@+id/answer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_alignBottom="@id/flashCard_question"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="-47dp"
+        android:layout_marginBottom="-110dp"
         android:text="Obama"
         android:textAlignment="center"
-        android:visibility="invisible"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:background="@drawable/blackbackground"
 
+        android:visibility="gone" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/blackbackground" />
 
+    <ImageView
+        android:id="@+id/addView"
+        android:layout_width="102dp"
+        android:layout_height="95dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="296dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="19dp"
+        android:src="@drawable/add" />
 
+    <ImageView
+        android:id="@+id/editView"
+        android:layout_width="77dp"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/pencil" />
 
 
 </RelativeLayout>
