@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -75,6 +76,26 @@
         android:layout_marginStart="25dp"
         android:layout_marginBottom="35dp"
         android:src="@drawable/pencil" />
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="77dp"
+        android:layout_height="79dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="204dp"
+        android:src="@drawable/right" />
+
+    <ImageView
+        android:id="@+id/deleteQuestion"
+        android:layout_width="77dp"
+        android:layout_height="79dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="306dp"
+        android:layout_marginBottom="202dp"
+        android:src="@drawable/recycle" />
 
 
 </RelativeLayout>
