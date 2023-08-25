@@ -4,9 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewAnimationUtils
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlin.math.hypot
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         val AdvanceQuestion = findViewById<ImageView>(R.id.next)
         val DeleteAnswerQuestion = findViewById<ImageView>(R.id.deleteQuestion)
 
+
+
+
         AdvanceQuestion.setOnClickListener(){
             val ListQuestion = flashcardatabase.getAllCards()
             if(ListQuestion.isNotEmpty()){
@@ -32,6 +39,12 @@ class MainActivity : AppCompatActivity() {
                 val randomQuestion = ListQuestion[randomIndex]
                 textView.text = randomQuestion.question
                 textAnswer.text = randomQuestion.answer
+
+                var a = 0
+                val slideout = AnimationUtils.loadAnimation(this, R.anim.slideout)
+                textView.startAnimation(slideout)
+                textView.visibility = View.VISIBLE
+                a++
             }
         }
 
@@ -62,6 +75,13 @@ class MainActivity : AppCompatActivity() {
                 textAnswer.visibility = View.VISIBLE
                 textView.visibility = View.GONE
             }
+            val slideout = AnimationUtils.loadAnimation(this, R.anim.slideout)
+            textView.startAnimation(slideout)
+            textView.visibility = View.INVISIBLE
+
+            val slidein = AnimationUtils.loadAnimation(this, R.anim.slidein)
+            textAnswer.startAnimation(slidein)
+            textAnswer.visibility = View.VISIBLE
         }
         textAnswer.setOnClickListener() {
             textAnswer.visibility = View.GONE
@@ -71,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         ajout.setOnClickListener(){
             val changeToAdd = Intent(this,AddCardActivity::class.java)
             startActivity(changeToAdd)
+            overridePendingTransition(R.anim.rightin, R.anim.leftout)
         }
 
         val receiveData = intent.getStringExtra("data")
